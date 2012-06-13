@@ -1,0 +1,15 @@
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.Form1.resources
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.Properties.Resources.resources
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.csproj.GenerateResource.Cache
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDK.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDKCommon.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PITimeServer.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.csproj.ResolveComReference.cache
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDKDlg.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\bin\Debug\H4ckuino.exe
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\bin\Debug\H4ckuino.pdb
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\bin\Debug\Interop.PISDK.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\bin\Debug\Interop.PISDKCommon.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\bin\Debug\Interop.PITimeServer.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.exe
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.pdb
