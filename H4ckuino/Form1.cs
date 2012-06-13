@@ -19,45 +19,35 @@ namespace H4ckuino
         PIPoint piPoint;
         PISDK.PISDK piSDK;
         PISDK.Server piServer;
-        string tagName = "HackathonRampData";
-        string serverName = "piserver1";
+        string tagName;
+        string serverName;
 
         public Form1()
         {
             InitializeComponent();
             string[] ports = SerialPort.GetPortNames();
             serialPort = new SerialPort();
-            serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
             foreach (string port in ports)
             {
                 comComboBox.Items.Add(port);
             }
-            piSDK = new PISDK.PISDKClass();
-            piServer = piSDK.Servers[serverName];
-            piServer.Open("");
-            if (piServer.Connected)
-                Console.WriteLine("Connected to Server");
-            piPoint = readPIPoint(piServer, tagName);
+            comComboBox.SelectedIndex = 0;
+            serverTextBox.Text = "piserver1";
+            tagTextBox.Text = "HackathonRampData";
         }
 
-        private void writePI(PIPoint piPoint, int index)
+        private void writePI(PIPoint piPoint, int data)
         {
-            piPoint.Data.UpdateValue(index, 0, DataMergeConstants.dmReplaceDuplicates);
+            if (piPoint != null)
+            {
+                piPoint.Data.UpdateValue(data, 0, DataMergeConstants.dmReplaceDuplicates);
+                Console.WriteLine("Sent " + data + " over PI System");
+            }
         }
 
         private PIPoint readPIPoint(PISDK.Server piServer, string tagName)
         {
             return piSDK.GetPoint("\\\\" + piServer.Path.ToString() + "\\" + tagName);
-        }
-
-        private void comComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Allow the user to set the appropriate properties.
-            serialPort.PortName = comComboBox.SelectedItem.ToString();
-            serialPort.BaudRate = 9600;
-            serialPort.Open();
-            if(serialPort.IsOpen)
-                Console.WriteLine(serialPort.PortName + " is open");
         }
 
         private void Form1_Deactivate(object sender, EventArgs e)
@@ -68,12 +58,38 @@ namespace H4ckuino
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
             string data = serialPort.ReadExisting();
-            int intData;
-            if(Int32.TryParse(data, out intData)) {
+            char c = data[0];
+            //foreach (char c in data)
+            //{
+                if(c == 10)
+                    return;
+                int intData = (int)c;
                 Console.Write("Data Received:");
-                Console.WriteLine(data);
+                Console.WriteLine(intData);
                 writePI(piPoint, intData);
-            }
+            //}
+        }
+
+        private void gameTimeButton_click(object sender, EventArgs e)
+        {
+            // Allow the user to set the appropriate properties.
+            if (serialPort.IsOpen)
+                serialPort.Close();
+            serialPort.PortName = comComboBox.SelectedItem.ToString();
+            serialPort.BaudRate = 9600;
+            serialPort.Open();
+            //send the Arduino an 'A' to get it going :)
+            serialPort.Write("A");
+            if (serialPort.IsOpen)
+                Console.WriteLine(serialPort.PortName + " is open");
+            serialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+            serverName = serverTextBox.Text;
+            tagName = tagTextBox.Text;
+            piSDK = new PISDK.PISDKClass();
+            piServer = piSDK.Servers[serverName];
+            if (piServer.Connected)
+                Console.WriteLine("Connected to Server");
+            piPoint = readPIPoint(piServer, tagName);
         }
     }
 }
