@@ -1,0 +1,5 @@
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDK.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDKCommon.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PISDKDlg.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\Interop.PITimeServer.dll
+C:\Users\Gabriel\Documents\Hackathon\H4ckuino\H4ckuino\H4ckuino\obj\x86\Debug\H4ckuino.csproj.ResolveComReference.cache
